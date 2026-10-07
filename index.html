@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion">
+  <meta name="description" content="Just Weather Scoring (JWS) is a single-stage, end-to-end diffusion model for efficient probabilistic precipitation nowcasting directly in radar space.">
+  <meta name="keywords" content="weather nowcasting, precipitation forecasting, distributional diffusion, transformers, uncertainty quantification, SEVIR, MeteoNet">
+  <meta name="author" content="Jannik Wiese, Johannes Schusterbauer, Tommaso Martorella, Björn Ommer">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CompVis @ LMU Munich">
+  <meta property="og:title" content="Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion">
+  <meta property="og:description" content="Efficient probabilistic precipitation nowcasting with a single, end-to-end radar-space diffusion model. Full project page coming soon.">
+  <meta property="og:image" content="docs/teaser.png">
+  <meta property="og:image:width" content="2000">
+  <meta property="og:image:height" content="723">
+  <meta property="og:image:alt" content="Comparison of CasCast, FREUD, and the single-stage JWS forecasting pipeline">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Weather nowcasting">
+  <meta property="article:tag" content="Distributional diffusion">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@compvis_lmu">
+  <meta name="twitter:title" content="Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion">
+  <meta name="twitter:description" content="Efficient probabilistic precipitation nowcasting with a single, end-to-end radar-space diffusion model. Full project page coming soon.">
+  <meta name="twitter:image" content="docs/teaser.png">
+  <meta name="twitter:image:alt" content="Comparison of CasCast, FREUD, and the single-stage JWS forecasting pipeline">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion">
+  <meta name="citation_author" content="Wiese, Jannik">
+  <meta name="citation_author" content="Schusterbauer, Johannes">
+  <meta name="citation_author" content="Martorella, Tommaso">
+  <meta name="citation_author" content="Ommer, Björn">
+
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <title>Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion</title>
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion",
+    "description": "Just Weather Scoring (JWS) is a single-stage, end-to-end diffusion model for efficient probabilistic precipitation nowcasting directly in radar space.",
+    "author": [
+      {"@type": "Person", "name": "Jannik Wiese"},
+      {"@type": "Person", "name": "Johannes Schusterbauer"},
+      {"@type": "Person", "name": "Tommaso Martorella"},
+      {"@type": "Person", "name": "Björn Ommer"}
+    ],
+    "image": "docs/teaser.png",
+    "keywords": ["weather nowcasting", "distributional diffusion", "transformers", "SEVIR", "MeteoNet"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Jannik Wiese<sup>*</sup>,</span>
+                <span class="author-block">Johannes Schusterbauer<sup>*</sup>,</span>
+                <span class="author-block">Tommaso Martorella,</span>
+                <span class="author-block">Björn Ommer</span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">CompVis @ LMU Munich, Munich Center for Machine Learning (MCML)</span>
+                <span class="eql-cntrb"><small><br><sup>*</sup>equal contribution</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaser figure -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img src="docs/teaser.png" alt="Comparison of CasCast, FREUD, and JWS: JWS generates radar forecasts with a single end-to-end model, eliminating separate compression and decoding stages." width="2000" height="723" style="display: block; margin: 0 auto; width: 95%; height: auto;">
+          <h2 class="subtitle has-text-centered">
+            JWS simplifies probabilistic precipitation nowcasting with a single, end-to-end model that generates forecasts directly in radar space.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- TL;DR -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">TL;DR</h2>
+            <div class="content">
+              <ul>
+                <li><strong>Just Weather Scoring (JWS)</strong> generates probabilistic precipitation nowcasts directly in radar space with a <strong>single, end-to-end diffusion model</strong>.</li>
+                <li><strong>Masked Asynchronous Diffusion (MAD)</strong> preserves clean observations while adapting noise levels to high-dimensional radar sequences.</li>
+                <li>A <strong>simple distributional objective (sDDM)</strong> combines CRPS and squared error for <strong>few-step forecasting</strong> with strong probabilistic skill and further gains from more inference steps.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Generative diffusion models are well-suited for probabilistic precipitation nowcasting, but existing approaches often rely on separately trained compression or deterministic forecasting components and remain costly at inference due to iterative denoising.
+                We introduce Just Weather Scoring (JWS), a single-stage, end-to-end diffusion model which addresses both issues by forecasting directly in radar space and enabling few-step generation.
+                Radar-space modeling greatly simplifies training and inference and eliminates uncertainty arising from lossy compression.
+                JWS combines Masked Asynchronous Diffusion, a timestep-sampling scheme that preserves clean context while adapting diffusion training to high-dimensional spatio-temporal data, with a simple scoring-rule objective that aligns training with probabilistic forecasting and unlocks few-step generation.
+                On the SEVIR and MeteoNet benchmarks, JWS achieves state-of-the-art probabilistic forecasting performance at reduced training and inference cost.
+                Even our smallest model remains competitive using substantially fewer parameters and more than 17× faster inference.
+                Code and models will be released upon acceptance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Coming soon</h2>
+            <div class="content">
+              <p>The full project page, code, and model weights are coming soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
