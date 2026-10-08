@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="CompVis @ LMU Munich">
   <meta property="og:title" content="Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion">
   <meta property="og:description" content="Efficient probabilistic precipitation nowcasting with a single, end-to-end radar-space diffusion model. Full project page coming soon.">
-  <meta property="og:image" content="docs/teaser.png">
+  <meta property="og:image" content="static/images/teaser.png">
   <meta property="og:image:width" content="2000">
   <meta property="og:image:height" content="723">
   <meta property="og:image:alt" content="Comparison of CasCast, FREUD, and the single-stage JWS forecasting pipeline">
@@ -30,7 +30,7 @@
   <meta name="twitter:site" content="@compvis_lmu">
   <meta name="twitter:title" content="Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion">
   <meta name="twitter:description" content="Efficient probabilistic precipitation nowcasting with a single, end-to-end radar-space diffusion model. Full project page coming soon.">
-  <meta name="twitter:image" content="docs/teaser.png">
+  <meta name="twitter:image" content="static/images/teaser.png">
   <meta name="twitter:image:alt" content="Comparison of CasCast, FREUD, and the single-stage JWS forecasting pipeline">
 
   <!-- Academic/Research Specific -->
@@ -49,9 +49,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <title>Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion</title>
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script defer src="static/js/other-works.js"></script>
+  <script defer src="static/js/citation.js"></script>
+  <script defer src="static/js/forecast-comparison.js"></script>
 
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -66,21 +71,60 @@
       {"@type": "Person", "name": "Tommaso Martorella"},
       {"@type": "Person", "name": "Björn Ommer"}
     ],
-    "image": "docs/teaser.png",
+    "image": "static/images/teaser.png",
     "keywords": ["weather nowcasting", "distributional diffusion", "transformers", "SEVIR", "MeteoNet"],
     "isAccessibleForFree": true
   }
   </script>
 </head>
 <body>
+  <div class="more-works-container">
+    <button class="more-works-btn" type="button" aria-expanded="false" aria-controls="moreWorksDropdown">
+      <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 00-2 2v14l4-3h12a2 2 0 002-2V5a2 2 0 00-2-2m0 11H6.33L5 15.25V5h14zm-9-7h7v2h-7zm0 3h5v2h-5zM7 7h2v5H7z"/></svg>
+      <span>Other Works</span>
+      <svg class="icon-svg dropdown-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown" aria-hidden="true">
+      <div class="dropdown-header">
+        <h4>Other Works</h4>
+        <button class="close-btn" type="button" aria-label="Close other works">
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://compvis.github.io/weather-rf/" class="work-item" target="_blank" rel="noopener noreferrer">
+          <div class="work-info">
+            <h5>FREUD</h5>
+            <p>Probabilistic precipitation nowcasting with rectified flow transformers.</p>
+          </div>
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14z"/><path d="M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+        </a>
+        <a href="https://compvis.github.io/patch-forcing/" class="work-item" target="_blank" rel="noopener noreferrer">
+          <div class="work-info">
+            <h5>Patch Forcing</h5>
+            <p>Difficulty-aware adaptive sampling for image generation.</p>
+          </div>
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14z"/><path d="M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+        </a>
+        <a href="https://compvis.github.io/schroedingers_cat/" class="work-item" target="_blank" rel="noopener noreferrer">
+          <div class="work-info">
+            <h5>Schrödinger's Cat</h5>
+            <p>Probabilistic modeling of future scene motion.</p>
+          </div>
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14z"/><path d="M5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <main id="main-content">
-    <section class="hero">
+    <section class="hero publication-intro">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion</h1>
-              <div class="is-size-5 publication-authors">
+              <div class="is-size-5 publication-authors has-text-weight-bold">
                 <span class="author-block">Jannik Wiese<sup>*</sup>,</span>
                 <span class="author-block">Johannes Schusterbauer<sup>*</sup>,</span>
                 <span class="author-block">Tommaso Martorella,</span>
@@ -89,6 +133,32 @@
               <div class="is-size-5 publication-authors">
                 <span class="author-block">CompVis @ LMU Munich, Munich Center for Machine Learning (MCML)</span>
                 <span class="eql-cntrb"><small><br><sup>*</sup>equal contribution</small></span>
+              </div>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="./" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" aria-hidden="true">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/CompVis/jws" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" aria-hidden="true">
+                        <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.4c0 .3.2.7.8.6A12 12 0 0012 .3z"/></svg>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="./" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" aria-hidden="true">🤗</span>
+                      <span>Weights</span>
+                    </a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -100,9 +170,12 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <img src="docs/teaser.png" alt="Comparison of CasCast, FREUD, and JWS: JWS generates radar forecasts with a single end-to-end model, eliminating separate compression and decoding stages." width="2000" height="723" style="display: block; margin: 0 auto; width: 95%; height: auto;">
+          <div class="teaser-figures">
+            <img src="static/images/teaser.png" alt="Comparison of CasCast, FREUD, and JWS: JWS generates radar forecasts with a single end-to-end model, eliminating separate compression and decoding stages." width="2000" height="723">
+            <img src="static/images/teaser-performance.png" alt="CRPS versus training TFLOPs for JWS, CasCast, and FREUD, including their separate training stages.">
+          </div>
           <h2 class="subtitle has-text-centered">
-            JWS simplifies probabilistic precipitation nowcasting with a single, end-to-end model that generates forecasts directly in radar space.
+            JWS simplifies probabilistic precipitation nowcasting with a single, end-to-end model that generates forecasts directly in data space, achieving competitive forecasting at substantially lower training cost.
           </h2>
         </div>
       </div>
@@ -118,7 +191,7 @@
               <ul>
                 <li><strong>Just Weather Scoring (JWS)</strong> generates probabilistic precipitation nowcasts directly in radar space with a <strong>single, end-to-end diffusion model</strong>.</li>
                 <li><strong>Masked Asynchronous Diffusion (MAD)</strong> preserves clean observations while adapting noise levels to high-dimensional radar sequences.</li>
-                <li>A <strong>simple distributional objective (sDDM)</strong> combines CRPS and squared error for <strong>few-step forecasting</strong> with strong probabilistic skill and further gains from more inference steps.</li>
+                <li>The <strong>simple distributional diffusion model (sDDM)</strong> objective combines CRPS and squared error for <strong>few-step forecasting</strong> with strong probabilistic skill and further gains from more inference steps.</li>
               </ul>
             </div>
           </div>
@@ -140,7 +213,6 @@
                 JWS combines Masked Asynchronous Diffusion, a timestep-sampling scheme that preserves clean context while adapting diffusion training to high-dimensional spatio-temporal data, with a simple scoring-rule objective that aligns training with probabilistic forecasting and unlocks few-step generation.
                 On the SEVIR and MeteoNet benchmarks, JWS achieves state-of-the-art probabilistic forecasting performance at reduced training and inference cost.
                 Even our smallest model remains competitive using substantially fewer parameters and more than 17× faster inference.
-                Code and models will be released upon acceptance.
               </p>
             </div>
           </div>
@@ -148,33 +220,370 @@
       </div>
     </section>
 
-    <section class="section">
+    <!-- Method -->
+    <section class="section" id="method">
       <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
+        <div class="columns is-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3">Coming soon</h2>
-            <div class="content">
-              <p>The full project page, code, and model weights are coming soon.</p>
+            <h2 class="title is-3 has-text-centered">Method</h2>
+            <div class="content has-text-justified">
+              <p class="has-text-centered">
+                <img src="static/images/forecast-ensembles.png" alt="FREUD ensembles reconstructions of latent forecasts; JWS samples forecast ensembles directly in radar space." width="800" loading="lazy">
+              </p>
+              <p>
+                JWS generates radar forecasts with a single transformer, avoiding separately trained compression and deterministic forecasting stages.
+                Sampling multiple futures while keeping observations fixed estimates predictive uncertainty directly in radar space.
+              </p>
+
+              <hr class="method-divider">
+              <h3 class="title is-4 has-text-left">Masked Asynchronous Diffusion:</h3>
+              <p class="has-text-centered">
+                <img src="static/images/tbar-sampling.png" alt="Correlated framewise diffusion timesteps sampled around a shared center, with selected context frames kept clean." width="250" loading="lazy">
+              </p>
+              <p>
+                MAD keeps context frames clean, aligning training with forecasting from observed radar data.
+                For remaining frames, it samples correlated noise levels around a shared center, adapted to spatial and temporal resolution.
+                Per-frame noise levels and flexible context selection enable asynchronous denoising, varying confidence in observations or forecast priors, and filling gaps in partially observed sequences.
+              </p>
+
+              <hr class="method-divider">
+              <h3 class="title is-4 has-text-left">simple Distributional Diffusion:</h3>
+              <p class="has-text-centered">
+                <img src="static/images/distributional-diffusion.png" alt="Distributional diffusion represents conditional denoising distributions, enabling larger sampling steps than mean-velocity prediction." width="800" loading="lazy">
+              </p>
+              <p>
+                sDDM linearly interpolates between pixelwise CRPS at high noise and mean squared error near clean data.
+                This transitions from distributional supervision to regression, enabling few-step forecasting while retaining improvements from additional denoising steps.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page.
-              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
+    <!-- Key Results -->
+    <section class="section hero is-light" id="key-results">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">Key Results</h2>
+            <h3 class="title is-4 has-text-left">SEVIR nowcasting:</h3>
+            <div class="results-table-wrapper" role="region" aria-label="SEVIR nowcasting results" tabindex="0">
+              <table class="results-table">
+                <thead>
+                  <tr><th scope="col">Method</th><th scope="col">Stages</th><th scope="col">Params</th><th scope="col">CRPS ↓</th><th scope="col">SSIM ↑</th><th scope="col">HSS ↑</th><th scope="col">CSI ↑</th><th scope="col">RI* ↓</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">ConvLSTM</th><td>1</td><td>14M</td><td>0.0264</td><td>0.7749</td><td>0.5232</td><td>0.4102</td><td>—</td></tr>
+                  <tr><th scope="row">PredRNN</th><td>1</td><td>47M</td><td>0.0271</td><td>0.7497</td><td>0.5192</td><td>0.4045</td><td>—</td></tr>
+                  <tr><th scope="row">PhyDNet</th><td>1</td><td>14M</td><td>0.0253</td><td>0.7649</td><td>0.5311</td><td>0.4198</td><td>—</td></tr>
+                  <tr><th scope="row">SimVP</th><td>1</td><td>16M</td><td>0.0259</td><td>0.7772</td><td>0.5280</td><td>0.4153</td><td>—</td></tr>
+                  <tr><th scope="row">EarthFormer</th><td>1</td><td>9M</td><td>0.0251</td><td>0.7756</td><td>0.5411</td><td>0.4310</td><td>—</td></tr>
+                </tbody>
+                <tbody>
+                  <tr><th scope="row">NowcastNet</th><td>1</td><td>35M</td><td>0.0283</td><td>0.5696</td><td>0.5365</td><td>0.4152</td><td>—</td></tr>
+                  <tr><th scope="row">PreDiff†</th><td>2</td><td>105M</td><td>0.0202</td><td>0.7648</td><td>0.4914</td><td>0.3875</td><td>—</td></tr>
+                  <tr><th scope="row">CasCast</th><td>3</td><td>402M</td><td>0.0202</td><td>0.7797</td><td>0.5602</td><td>0.4401</td><td>0.3124</td></tr>
+                  <tr><th scope="row">FlowCast</th><td>2</td><td>160M</td><td>0.0182</td><td>—</td><td>0.5863</td><td><strong>0.4651</strong></td><td>0.6835</td></tr>
+                  <tr><th scope="row">FREUD</th><td>2</td><td>521M</td><td>0.0190</td><td>0.7841</td><td>0.5011</td><td>0.3864</td><td>0.1355</td></tr>
+                </tbody>
+                <tbody class="ours-rows">
+                  <tr><th scope="row">JWS-T/32</th><td>1</td><td>9M</td><td>0.0184</td><td>0.8016</td><td>0.5132</td><td>0.3948</td><td><strong>0.0949</strong></td></tr>
+                  <tr><th scope="row">JWS-S/32</th><td>1</td><td>24M</td><td>0.0178</td><td>0.8057</td><td>0.5327</td><td>0.4116</td><td>0.0966</td></tr>
+                  <tr><th scope="row">JWS-B/32</th><td>1</td><td>94M</td><td>0.0176</td><td>0.8092</td><td>0.5408</td><td>0.4180</td><td>0.0956</td></tr>
+                  <tr><th scope="row">JWS-L/32</th><td>1</td><td>340M</td><td><strong>0.0175</strong></td><td><strong>0.8122</strong></td><td>0.5428</td><td>0.4183</td><td>0.1908</td></tr>
+                  <tr class="cfg-row"><th scope="row">↳ with CFG = 1.5</th><td>1</td><td>340M</td><td>0.0177</td><td>0.8023</td><td><strong>0.5894</strong></td><td>0.4581</td><td>0.1815</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="results-note">Bold: best score. † Trained at 128 × 128. * RI computed with our evaluation pipeline.</p>
+
+            <details class="results-details">
+              <summary><span class="show-label">Show MeteoNet results</span><span class="hide-label">Hide MeteoNet results</span></summary>
+              <div class="results-table-wrapper" role="region" aria-label="MeteoNet nowcasting results" tabindex="0">
+                <table class="results-table">
+                  <thead>
+                    <tr><th scope="col">Method</th><th scope="col">Stages</th><th scope="col">Params</th><th scope="col">CRPS ↓</th><th scope="col">SSIM ↑</th><th scope="col">HSS ↑</th><th scope="col">CSI ↑</th><th scope="col">RI* ↓</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">EarthFormer</th><td>1</td><td>9M</td><td>0.0224</td><td>—</td><td>—</td><td>0.2831</td><td>—</td></tr>
+                  </tbody>
+                  <tbody>
+                    <tr><th scope="row">NowcastNet</th><td>1</td><td>35M</td><td>0.0277</td><td>—</td><td>—</td><td>0.2955</td><td>—</td></tr>
+                    <tr><th scope="row">PreDiff</th><td>2</td><td>105M</td><td>0.0197</td><td>—</td><td>—</td><td>0.2546</td><td>—</td></tr>
+                    <tr><th scope="row">CasCast</th><td>3</td><td>402M</td><td>0.0180</td><td>—</td><td>—</td><td>0.3156</td><td>—</td></tr>
+                    <tr><th scope="row">FREUD</th><td>2</td><td>521M</td><td>0.0193</td><td>0.7312</td><td>0.2082</td><td>0.1417</td><td>—</td></tr>
+                  </tbody>
+                  <tbody class="ours-rows">
+                    <tr><th scope="row">JWS-T/32</th><td>1</td><td>9M</td><td>0.0143</td><td>0.7887</td><td>0.4026</td><td>0.2851</td><td>0.2376</td></tr>
+                    <tr><th scope="row">JWS-S/32</th><td>1</td><td>24M</td><td>0.0141</td><td>0.7917</td><td>0.4079</td><td>0.2891</td><td>0.3100</td></tr>
+                    <tr><th scope="row">JWS-B/32</th><td>1</td><td>94M</td><td>0.0144</td><td>0.7967</td><td>0.4206</td><td>0.2955</td><td>0.3858</td></tr>
+                    <tr><th scope="row">JWS-L/32</th><td>1</td><td>340M</td><td><strong>0.0138</strong></td><td><strong>0.7974</strong></td><td>0.4186</td><td>0.2959</td><td><strong>0.0773</strong></td></tr>
+                    <tr class="cfg-row"><th scope="row">↳ with CFG = 1.5</th><td>1</td><td>340M</td><td>0.0141</td><td>0.7904</td><td><strong>0.4816</strong></td><td><strong>0.3448</strong></td><td>0.5719</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="results-note">Even the 9M-parameter JWS-T outperforms prior methods in CRPS. * RI computed with our evaluation pipeline.</p>
+            </details>
+            <div class="content has-text-justified">
+              <p>JWS achieves the best CRPS and SSIM on SEVIR and MeteoNet with a single-stage model. Classifier-free guidance further improves HSS and CSI.</p>
+            </div>
+
+            <hr class="method-divider">
+            <h3 class="title is-4 has-text-left">Fast probabilistic forecasts:</h3>
+            <div class="results-forecast">
+              <figure class="results-figure">
+                <div class="results-plot">
+                  <img src="static/images/few-step-forecasting.png" alt="CRPS versus time in seconds per forecast, comparing JWS-B sampling budgets with CasCast and FREUD." width="1200" height="825" loading="lazy">
+                </div>
+                <figcaption>CRPS versus forecast latency. Bubble size indicates parameter count.</figcaption>
+              </figure>
+              <div class="content has-text-justified">
+                <p>One-step JWS-B generates a 10-member ensemble in less than a second, with CRPS competitive with CasCast and FREUD. More denoising steps further improve forecast quality.</p>
+              </div>
+            </div>
+
+            <hr class="method-divider">
+            <h3 class="title is-4 has-text-left">Calibrated uncertainty:</h3>
+            <figure class="results-figure">
+              <div class="results-plot results-calibration">
+                <img src="static/images/rank-histogram.png" alt="SEVIR rank histograms: JWS is closer to the uniform ideal than CasCast and FREUD." width="1200" height="564" loading="lazy">
+                <img src="static/images/calibration-lead-time.png" alt="Reliability index over forecast lead time: JWS maintains lower RI than CasCast and FREUD." width="1200" height="557" loading="lazy">
+              </div>
+              <figcaption>Rank histograms (left) and reliability index over lead time (right). Uniform ranks and lower RI are better.</figcaption>
+            </figure>
+            <div class="content has-text-justified">
+              <p>JWS produces flatter rank histograms than CasCast and FREUD, indicating more reliable uncertainty estimates. This calibration advantage persists across forecast lead times.</p>
+            </div>
+
+            <hr class="method-divider">
+            <h3 class="title is-4 has-text-left">Inference time scaling:</h3>
+            <figure class="results-figure">
+              <div class="results-plot">
+                <img src="static/images/inference-scaling.png" alt="Left: JWS-B CRPS and CSI across ensemble sizes and function evaluations (NFE). Right: JWS-S compared with Flow Matching, Shortcut, and FGN across ensemble sizes and NFE." width="2200" height="433" loading="lazy">
+              </div>
+              <figcaption>Ensemble and NFE scaling for JWS-B (left), and comparisons with FM, Shortcut, and FGN (right).</figcaption>
+            </figure>
+            <div class="content has-text-justified">
+              <p>JWS benefits from larger ensembles and more denoising steps. With just one function evaluation, JWS-S outperforms Flow Matching, Shortcut models, and FGN in matched comparisons.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
+
+    <!-- Qualitative Forecasts -->
+    <section class="section has-background-white" id="qualitative-forecasts">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths forecast-comparison-container">
+        <h2 class="title is-3 has-text-centered">Qualitative Forecasts</h2>
+        <div class="forecast-controls">
+          <button class="forecast-playback" type="button" disabled aria-label="Play all forecasts">Loading…</button>
+          <span class="forecast-leadtime">+5 min</span>
+        </div>
+        <div class="forecast-comparison-stack">
+          <div class="forecast-sample" data-case="case-10-idx1679" data-member="2" data-fps="5" data-frame-count="12" aria-label="Forecast comparison, sample 1">
+            <div class="forecast-row-scroll" role="region" aria-label="Sample 1 methods" tabindex="0">
+              <div class="forecast-comparison-grid forecast-comparison-grid--four-columns">
+              <div class="forecast-comparison">
+                <h3 class="forecast-method">Ours</h3>
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-10-idx1679/ours.mp4" poster="static/forecasts/case-10-idx1679/ours.png" muted loop playsinline preload="auto" aria-label="Ours forecast, sample 1"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-10-idx1679/gt.mp4" poster="static/forecasts/case-10-idx1679/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 1"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for Ours, sample 1" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <h3 class="forecast-method">FREUD</h3>
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-10-idx1679/freud.mp4" poster="static/forecasts/case-10-idx1679/freud.png" muted loop playsinline preload="auto" aria-label="FREUD forecast, sample 1"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-10-idx1679/gt.mp4" poster="static/forecasts/case-10-idx1679/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 1"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for FREUD, sample 1" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <h3 class="forecast-method">CasCast</h3>
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-10-idx1679/cascast.mp4" poster="static/forecasts/case-10-idx1679/cascast.png" muted loop playsinline preload="auto" aria-label="CasCast forecast, sample 1"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-10-idx1679/gt.mp4" poster="static/forecasts/case-10-idx1679/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 1"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for CasCast, sample 1" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <h3 class="forecast-method">FlowCast</h3>
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-10-idx1679/flowcast.mp4" poster="static/forecasts/case-10-idx1679/flowcast.png" muted loop playsinline preload="auto" aria-label="FlowCast forecast, sample 1"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-10-idx1679/gt.mp4" poster="static/forecasts/case-10-idx1679/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 1"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for FlowCast, sample 1" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="forecast-sample" data-case="case-28-idx10647" data-member="1" data-fps="5" data-frame-count="12" aria-label="Forecast comparison, sample 2">
+            <div class="forecast-row-scroll" role="region" aria-label="Sample 2 methods" tabindex="0">
+              <div class="forecast-comparison-grid forecast-comparison-grid--four-columns">
+              <div class="forecast-comparison">
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-28-idx10647/ours.mp4" poster="static/forecasts/case-28-idx10647/ours.png" muted loop playsinline preload="auto" aria-label="Ours forecast, sample 2"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-28-idx10647/gt.mp4" poster="static/forecasts/case-28-idx10647/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 2"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for Ours, sample 2" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-28-idx10647/freud.mp4" poster="static/forecasts/case-28-idx10647/freud.png" muted loop playsinline preload="auto" aria-label="FREUD forecast, sample 2"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-28-idx10647/gt.mp4" poster="static/forecasts/case-28-idx10647/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 2"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for FREUD, sample 2" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-28-idx10647/cascast.mp4" poster="static/forecasts/case-28-idx10647/cascast.png" muted loop playsinline preload="auto" aria-label="CasCast forecast, sample 2"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-28-idx10647/gt.mp4" poster="static/forecasts/case-28-idx10647/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 2"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for CasCast, sample 2" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-28-idx10647/flowcast.mp4" poster="static/forecasts/case-28-idx10647/flowcast.png" muted loop playsinline preload="auto" aria-label="FlowCast forecast, sample 2"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-28-idx10647/gt.mp4" poster="static/forecasts/case-28-idx10647/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 2"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for FlowCast, sample 2" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="forecast-sample" data-case="case-17-idx520" data-member="1" data-fps="5" data-frame-count="12" aria-label="Forecast comparison, sample 3">
+            <div class="forecast-row-scroll" role="region" aria-label="Sample 3 methods" tabindex="0">
+              <div class="forecast-comparison-grid forecast-comparison-grid--four-columns">
+              <div class="forecast-comparison">
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-17-idx520/ours.mp4" poster="static/forecasts/case-17-idx520/ours.png" muted loop playsinline preload="auto" aria-label="Ours forecast, sample 3"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-17-idx520/gt.mp4" poster="static/forecasts/case-17-idx520/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 3"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for Ours, sample 3" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-17-idx520/freud.mp4" poster="static/forecasts/case-17-idx520/freud.png" muted loop playsinline preload="auto" aria-label="FREUD forecast, sample 3"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-17-idx520/gt.mp4" poster="static/forecasts/case-17-idx520/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 3"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for FREUD, sample 3" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-17-idx520/cascast.mp4" poster="static/forecasts/case-17-idx520/cascast.png" muted loop playsinline preload="auto" aria-label="CasCast forecast, sample 3"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-17-idx520/gt.mp4" poster="static/forecasts/case-17-idx520/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 3"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for CasCast, sample 3" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+              <div class="forecast-comparison">
+                <div class="forecast-comparison__viewport">
+                  <video class="forecast-comparison__video forecast-comparison__video--base" src="static/forecasts/case-17-idx520/flowcast.mp4" poster="static/forecasts/case-17-idx520/flowcast.png" muted loop playsinline preload="auto" aria-label="FlowCast forecast, sample 3"></video>
+                  <div class="forecast-comparison__overlay">
+                    <video class="forecast-comparison__video forecast-comparison__video--overlay" src="static/forecasts/case-17-idx520/gt.mp4" poster="static/forecasts/case-17-idx520/gt.png" muted loop playsinline preload="auto" aria-label="Ground truth, sample 3"></video>
+                  </div>
+                  <span class="forecast-comparison__label forecast-comparison__label--left">GT</span>
+                  <span class="forecast-comparison__label forecast-comparison__label--right">Forecast</span>
+                  <div class="forecast-comparison__divider" aria-hidden="true"><span class="forecast-comparison__handle"></span></div>
+                  <input class="forecast-comparison__slider" type="range" min="0" max="100" value="50" aria-label="Ground truth reveal for FlowCast, sample 3" aria-valuetext="50% ground truth">
+                </div>
+              </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Citation -->
+    <section class="section hero is-light" id="citation">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3 has-text-centered">Citation</h2>
+            <div class="citation-field">
+              <button class="copy-bibtex-btn" type="button" aria-label="Copy BibTeX citation">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 5H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/></svg>
+                <span class="citation-copy-label" role="status">Copy</span>
+              </button>
+              <pre tabindex="0" aria-label="BibTeX citation"><code>@misc{wiese2026jws,
+    title = {Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion},
+    author = {Wiese, Jannik and Schusterbauer, Johannes and Martorella, Tommaso and Ommer, Bj{\"o}rn},
+    year = {2026}
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="visitor-map" aria-label="Visitor map">
+        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=AQLVa6hhyZka8v7U9R8ufHG_YzxV902k4jVfp9YtM2A&amp;cl=ffffff&amp;w=a"></script>
+      </div>
+    </section>
+
+  </main>
+
 </body>
 </html>
