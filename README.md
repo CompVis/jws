@@ -11,7 +11,7 @@
  </p>
 <div align="center">
 
-[![Website](https://img.shields.io/badge/Project-Page-lightgrey)](_blank)
+[![Website](https://img.shields.io/badge/Project-Page-lightgrey)](https://compvis.github.io/jws/)
 [![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](_blank)
 [![Huggingface](https://img.shields.io/badge/Huggingface-Weights-orange)](_blank)
 
