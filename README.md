@@ -12,7 +12,7 @@
 <div align="center">
 
 [![Website](https://img.shields.io/badge/Project-Page-lightgrey)](_blank)
-[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](_blank)
+[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2610.12189)
 [![Huggingface](https://img.shields.io/badge/Huggingface-Weights-orange)](_blank)
 
 <p align="center">
@@ -97,8 +97,9 @@ If you use our work or parts thereof, please cite us accordingly:
 
 ```bibtex
 @misc{wiese2026jws,
-    title = {Just Weather Scoring: Efficient End-to-End Nowcasting with Distributional Diffusion},
-    author = {Wiese, Jannik and Schusterbauer, Johannes and Martorella, Tommaso and Ommer, Bj{\"o}rn},
-    year = {2026}
+    title={Just Weather Scoring: Efficient End-to-end Nowcasting with Distributional Diffusion},
+    author={Wiese, Jannik and Schusterbauer, Johannes and Martorella, Tommaso and Ommer, Bj{\"o}rn},
+    year={2026},
+    url={https://arxiv.org/abs/2610.12189},
 }
 ```
